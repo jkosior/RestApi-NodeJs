@@ -84,6 +84,28 @@ router.get("/:id", (req,res) =>{
 });
 
 /**
+ * Update
+ */
+
+router.put("/:id", (req, res) => {
+
+    let params = req.params;
+
+    User.findByIdAndUpdate(params.id, req.body, 
+        { new: true }, (err, user) => {
+
+        if (err) {
+            return res.status(500)
+                .send("An error occured while updating user");
+        }
+
+        res.status(200).send(user);
+
+    });
+
+});
+
+/**
  * Delete
  */
 
@@ -98,7 +120,9 @@ router.delete("/:id", (req, res) =>{
                 .send("An error occured while deleting a user");
         }
 
-        res.status(200).send(`User: ${user.name}, ${user.email} has been deleted`);
+        res.status(200)
+            .send(`User: ${user.name}, ${user.email} has been deleted`);
+
     });
 
 });
