@@ -2,9 +2,10 @@
   "name": "restapi-nodejs",
   "version": "1.0.0",
   "description": "NodeJS REST API using Express, Mongoose and MongoDB",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
