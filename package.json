@@ -2,7 +2,7 @@
   "name": "restapi-nodejs",
   "version": "1.0.0",
   "description": "NodeJS REST API using Express, Mongoose and MongoDB",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +18,7 @@
     "REST",
     "API"
   ],
-  "author": "Jakub Kosior",
+  "author": "jkosior",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jkosior/RestApi-NodeJs/issues"
