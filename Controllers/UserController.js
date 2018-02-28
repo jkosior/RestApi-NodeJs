@@ -1,6 +1,7 @@
 const express = require("express");
 const body_parser = require("body-parser");
 const User = require("../Models/User");
+const Loggers = require("../Loggers");
 
 const router = express.Router();
 
@@ -32,9 +33,10 @@ router.post("/", (req, res) => {
             }
 
             res.status(200).send(user);
-
+            Loggers.usercreated("info", user);
         }
     );
+    
 });
 
 /**
@@ -86,7 +88,6 @@ router.get("/:id", (req,res) =>{
 /**
  * Update
  */
-
 router.put("/:id", (req, res) => {
 
     let params = req.params;
@@ -122,6 +123,7 @@ router.delete("/:id", (req, res) =>{
 
         res.status(200)
             .send(`User: ${user.name}, ${user.email} has been deleted`);
+        Logger.userdeleted.emit("info", user.name)
 
     });
 
